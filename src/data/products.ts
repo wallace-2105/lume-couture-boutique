@@ -49,6 +49,7 @@ import shorts2 from "@/assets/shorts 2.jpeg";
 import vestidoOrange from "@/assets/vestido orange.jpg";
 import modaPraiaBanner from "@/assets/moda praia.webp";
 import saiaCapa from "@/assets/saia capa.webp";
+import blusaFemininaCapа from "@/assets/blusa feminina.webp";
 
 // ─── Tamanhos padrão ──────────────────────────────────────────────────────
 const SIZES_PMG = ["P", "M", "G"];
@@ -59,7 +60,7 @@ const TAMANHO_UNICO = ["Único"];
 // ─── Categorias ───────────────────────────────────────────────────────────
 export const categories: Category[] = [
   { slug: "vestidos",   name: "Vestidos",      tagline: "Silhuetas atemporais",          image: img("1595777457583-95e059d581b8") },
-  { slug: "blusas",     name: "Blusas",        tagline: "Delicadeza no essencial",        image: img("1564257577-2d3f9c2fa07f") },
+  { slug: "blusas",     name: "Blusas",        tagline: "Delicadeza no essencial",        image: blusaFemininaCapа },
   { slug: "calcas",     name: "Calças",        tagline: "Alfaiataria contemporânea",      image: img("1594633312681-425c7b97ccd1") },
   { slug: "jeans",      name: "Jeans",         tagline: "O denim reinventado",            image: img("1541099649105-f69ad21f3246") },
   { slug: "shorts",     name: "Shorts",        tagline: "Leveza e movimento",             image: img("1591195853828-11db59a44f6b") },
