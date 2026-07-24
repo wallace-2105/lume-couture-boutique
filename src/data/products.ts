@@ -47,6 +47,7 @@ import saidaDePraia from "@/assets/saida de praia.webp";
 import shorts from "@/assets/shorts.jpeg";
 import shorts2 from "@/assets/shorts 2.jpeg";
 import vestidoOrange from "@/assets/vestido orange.jpg";
+import modaPraiaBanner from "@/assets/moda praia.webp";
 
 // ─── Tamanhos padrão ──────────────────────────────────────────────────────
 const SIZES_PMG = ["P", "M", "G"];
@@ -66,7 +67,7 @@ export const categories: Category[] = [
   { slug: "macacoes",   name: "Macacões",      tagline: "Praticidade elegante",           image: img("1618932260643-eee4a2f652a6") },
   { slug: "casacos",    name: "Casacos",       tagline: "Camadas sofisticadas",           image: img("1544441893-675973e31985") },
   { slug: "fitness",    name: "Moda Fitness",  tagline: "Performance com estilo",         image: img("1518310383802-640c2de311b2") },
-  { slug: "praia",      name: "Moda Praia",    tagline: "Sol, mar e LUME",                image: img("1570976447640-ac859d963c5c") },
+  { slug: "praia",      name: "Moda Praia",    tagline: "Sol, mar e LUME",                image: modaPraiaBanner },
   { slug: "acessorios", name: "Acessórios",    tagline: "O detalhe faz o luxo",           image: img("1611085583191-a3b181a88401") },
 ];
 
