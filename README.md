@@ -37,15 +37,18 @@ Inicialmente, os pedidos são finalizados através do **WhatsApp**, permitindo u
 
 Home
 
-<img src="docs/home.png" width="100%"/>
+<img width="959" height="539" alt="Captura de tela 2026-07-24 115106" src="https://github.com/user-attachments/assets/a0671424-e3d7-4cf0-87d5-a3d336b22c93" />
+
 
 Produtos
 
-<img src="docs/products.png" width="100%"/>
+<img width="959" height="539" alt="Captura de tela 2026-07-24 115106" src="https://github.com/user-attachments/assets/af5f5bd9-7d53-4a30-a5ca-562be63c9152" />
+
 
 Carrinho
 
-<img src="docs/cart.png" width="100%"/>
+<img width="959" height="539" alt="Captura de tela 2026-07-24 115106" src="https://github.com/user-attachments/assets/adeca41a-85bf-43ad-bab9-c234029155ed" />
+
 
 *(Substitua pelas imagens reais do projeto.)*
 
