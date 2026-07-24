@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Heart, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import type { Product } from "@/types/product";
@@ -9,7 +9,11 @@ import { toast } from "sonner";
 export function ProductCard({ product }: { product: Product }) {
   const { add, open } = useCart();
   const [fav, setFav] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const inst = installments(product.price);
+
+  const showBack = hovered && !!product.backImage;
+  const displayImage = showBack ? product.backImage! : product.image;
 
   const handleAdd = () => {
     add(product);
@@ -26,15 +30,33 @@ export function ProductCard({ product }: { product: Product }) {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       whileHover={{ y: -6 }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
       className="group relative flex flex-col overflow-hidden rounded-md bg-card shadow-card transition-shadow hover:shadow-elegant"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-        <img
-          src={product.image}
-          alt={product.name}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
-        />
+        <AnimatePresence mode="crossfade" initial={false}>
+          <motion.img
+            key={displayImage}
+            src={displayImage}
+            alt={product.name}
+            loading="lazy"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.45, ease: "easeInOut" }}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </AnimatePresence>
+
+        {/* Badge de troca frente/costas */}
+        {product.backImage && (
+          <div className="absolute bottom-14 left-3 flex gap-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="rounded-sm bg-black/40 px-2 py-0.5 text-[9px] tracking-widest text-white/90 uppercase backdrop-blur-sm">
+              {hovered ? "costas" : "frente"}
+            </span>
+          </div>
+        )}
 
         <div className="absolute inset-x-0 top-3 flex items-center justify-between px-3">
           <div className="flex gap-1">
@@ -77,6 +99,18 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-xs text-muted-foreground">
           ou {inst.times}x de {formatPrice(inst.value)} sem juros
         </p>
+        {product.sizes && product.sizes.length > 0 && (
+          <div className="mt-2 flex flex-wrap gap-1">
+            {product.sizes.map((s) => (
+              <span
+                key={s}
+                className="rounded border border-wine/30 px-1.5 py-0.5 text-[10px] tracking-wide text-wine-deep uppercase"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </motion.article>
   );

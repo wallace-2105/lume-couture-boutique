@@ -24,7 +24,12 @@ export interface Product {
   name: string;
   price: number;
   category: CategorySlug;
+  /** Imagem principal (frente) */
   image: string;
+  /** Imagem de verso/extra — quando presente, o card troca ao passar o mouse */
+  backImage?: string;
+  /** Tamanhos disponíveis. Ex: ["P","M","G"] ou ["34","36","38","40","42"] */
+  sizes?: string[];
   featured?: boolean;
   isNew?: boolean;
   collection?: boolean;
@@ -32,4 +37,5 @@ export interface Product {
 
 export interface CartItem extends Product {
   quantity: number;
+  selectedSize?: string;
 }
