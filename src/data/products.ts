@@ -48,6 +48,7 @@ import shorts from "@/assets/shorts.jpeg";
 import shorts2 from "@/assets/shorts 2.jpeg";
 import vestidoOrange from "@/assets/vestido orange.jpg";
 import modaPraiaBanner from "@/assets/moda praia.webp";
+import saiaCapa from "@/assets/saia capa.webp";
 
 // ─── Tamanhos padrão ──────────────────────────────────────────────────────
 const SIZES_PMG = ["P", "M", "G"];
@@ -62,7 +63,7 @@ export const categories: Category[] = [
   { slug: "calcas",     name: "Calças",        tagline: "Alfaiataria contemporânea",      image: img("1594633312681-425c7b97ccd1") },
   { slug: "jeans",      name: "Jeans",         tagline: "O denim reinventado",            image: img("1541099649105-f69ad21f3246") },
   { slug: "shorts",     name: "Shorts",        tagline: "Leveza e movimento",             image: img("1591195853828-11db59a44f6b") },
-  { slug: "saias",      name: "Saias",         tagline: "Fluidez feminina",               image: img("1583496661160-fb5886a13d44") },
+  { slug: "saias",      name: "Saias",         tagline: "Fluidez feminina",               image: saiaCapa },
   { slug: "conjuntos",  name: "Conjuntos",     tagline: "Look completo",                  image: img("1490481651871-ab68de25d43d") },
   { slug: "macacoes",   name: "Macacões",      tagline: "Praticidade elegante",           image: img("1618932260643-eee4a2f652a6") },
   { slug: "casacos",    name: "Casacos",       tagline: "Camadas sofisticadas",           image: img("1544441893-675973e31985") },
