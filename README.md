@@ -42,15 +42,16 @@ Home
 
 Produtos
 
-<img width="959" height="539" alt="Captura de tela 2026-07-24 115106" src="https://github.com/user-attachments/assets/af5f5bd9-7d53-4a30-a5ca-562be63c9152" />
+<img width="959" height="539" alt="Captura de tela 2026-07-24 115201" src="https://github.com/user-attachments/assets/66b888bb-418d-4984-ae6b-a7ed996b30c8" />
+
 
 
 Carrinho
 
-<img width="959" height="539" alt="Captura de tela 2026-07-24 115106" src="https://github.com/user-attachments/assets/adeca41a-85bf-43ad-bab9-c234029155ed" />
+<img width="959" height="539" alt="Captura de tela 2026-07-24 115239" src="https://github.com/user-attachments/assets/46a09d56-ab7b-412b-b59b-b43bb08c5e41" />
 
 
-*(Substitua pelas imagens reais do projeto.)*
+
 
 ---
 
