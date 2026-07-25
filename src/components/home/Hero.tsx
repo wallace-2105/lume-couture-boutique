@@ -68,11 +68,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="absolute -bottom-8 -left-8 w-56 rounded-md glass p-4 shadow-elegant"
+            className="absolute bottom-4 left-4 w-52 rounded-md glass p-4 shadow-elegant"
           >
             <p className="text-[10px] tracking-widest uppercase text-wine">Peça em destaque</p>
             <p className="mt-1 font-serif text-lg text-wine-deep">Vestido Bordeaux Longo</p>
-            <p className="text-sm text-muted-foreground">R$ 489,90</p>
+            <p className="text-sm text-muted-foreground">R$ 189,99</p>
           </motion.div>
         </motion.div>
       </div>
