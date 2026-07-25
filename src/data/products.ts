@@ -238,7 +238,14 @@ export const products: Product[] = [
     price: 79.99,
     category: "shorts",
     image: shorts,
-    backImage: shorts2,
+    sizes: SIZES_JEANS,
+  },
+  {
+    id: "shorts-2",
+    name: "Shorts",
+    price: 79.99,
+    category: "shorts",
+    image: shorts2,
     sizes: SIZES_JEANS,
   },
 
