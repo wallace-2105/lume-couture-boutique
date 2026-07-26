@@ -219,7 +219,6 @@ export const products: Product[] = [
     price: 135.00,
     category: "jeans",
     image: calcaJensClaro,
-    backImage: jensClaro2,
     sizes: SIZES_JEANS,
   },
   {
@@ -228,6 +227,7 @@ export const products: Product[] = [
     price: 135.00,
     category: "jeans",
     image: jensClaro3,
+    backImage: jensClaro2,
     sizes: SIZES_JEANS,
   },
 
