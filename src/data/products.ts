@@ -50,6 +50,7 @@ import vestidoOrange from "@/assets/vestido orange.jpg";
 import modaPraiaBanner from "@/assets/moda praia.webp";
 import saiaCapa from "@/assets/saia capa.webp";
 import blusaFemininaCapа from "@/assets/blusa feminina.webp";
+import casacoCapa from "@/assets/casacocapa.jpg";
 
 // ─── Tamanhos padrão ──────────────────────────────────────────────────────
 const SIZES_PMG = ["P", "M", "G"];
@@ -67,7 +68,7 @@ export const categories: Category[] = [
   { slug: "saias",      name: "Saias",         tagline: "Fluidez feminina",               image: saiaCapa },
   { slug: "conjuntos",  name: "Conjuntos",     tagline: "Look completo",                  image: img("1490481651871-ab68de25d43d") },
   { slug: "macacoes",   name: "Macacões",      tagline: "Praticidade elegante",           image: img("1618932260643-eee4a2f652a6") },
-  { slug: "casacos",    name: "Casacos",       tagline: "Camadas sofisticadas",           image: img("1544441893-675973e31985") },
+  { slug: "casacos",    name: "Casacos",       tagline: "Camadas sofisticadas",           image: casacoCapa },
   { slug: "fitness",    name: "Moda Fitness",  tagline: "Performance com estilo",         image: img("1518310383802-640c2de311b2") },
   { slug: "praia",      name: "Moda Praia",    tagline: "Sol, mar e LUME",                image: modaPraiaBanner },
   { slug: "acessorios", name: "Acessórios",    tagline: "O detalhe faz o luxo",           image: img("1611085583191-a3b181a88401") },
