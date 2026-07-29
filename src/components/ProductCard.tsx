@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { Heart, ShoppingBag } from "lucide-react";
+import { Heart, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import type { Product } from "@/types/product";
 import { formatPrice, installments } from "@/utils/format";
@@ -57,12 +57,15 @@ export function ProductCard({ product }: { product: Product }) {
           />
         </AnimatePresence>
 
-        {/* Badge de troca frente/costas */}
+        {/* Indicadores de slide (setas) */}
         {product.backImage && (
-          <div className="absolute bottom-14 left-3 flex gap-1 opacity-100 lg:opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
-            <span className="rounded-sm bg-black/40 px-2 py-0.5 text-[9px] tracking-widest text-white/90 uppercase backdrop-blur-sm">
-              {hovered ? "costas" : "frente"} (toque para trocar)
-            </span>
+          <div className="absolute inset-y-0 inset-x-2 flex items-center justify-between opacity-100 lg:opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100 pointer-events-none">
+            <div className="grid h-6 w-6 place-items-center rounded-full bg-black/20 text-white/90 backdrop-blur-sm">
+              <ChevronLeft className="h-4 w-4" />
+            </div>
+            <div className="grid h-6 w-6 place-items-center rounded-full bg-black/20 text-white/90 backdrop-blur-sm">
+              <ChevronRight className="h-4 w-4" />
+            </div>
           </div>
         )}
 
