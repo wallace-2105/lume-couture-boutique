@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { Facebook, Instagram, Menu, Search, ShoppingBag, User, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { categories } from "@/data/products";
 
@@ -10,6 +10,17 @@ const WHATSAPP_URL = "https://wa.me/5511953752227";
 export function Header() {
   const { count, open } = useCart();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileOpen]);
 
   return (
     <motion.header
@@ -86,14 +97,14 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-wine-deep/95 backdrop-blur-lg text-cream md:hidden">
+        <div className="fixed inset-0 z-50 bg-wine-deep/95 backdrop-blur-lg text-cream md:hidden overflow-y-auto">
           <div className="flex items-center justify-between p-6">
             <span className="font-serif text-2xl tracking-[0.4em]">LUME</span>
             <button onClick={() => setMobileOpen(false)} aria-label="Fechar">
               <X className="h-6 w-6" />
             </button>
           </div>
-          <nav className="flex flex-col gap-1 px-6 pt-4">
+          <nav className="flex flex-col gap-1 px-6 pt-4 pb-12">
             {categories.map((c) => (
               <Link
                 key={c.slug}
