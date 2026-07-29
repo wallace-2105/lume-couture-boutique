@@ -10,13 +10,18 @@ export function ProductCard({ product }: { product: Product }) {
   const { add, open } = useCart();
   const [fav, setFav] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const [selectedSize, setSelectedSize] = useState<string>("");
   const inst = installments(product.price);
 
   const showBack = hovered && !!product.backImage;
   const displayImage = showBack ? product.backImage! : product.image;
 
   const handleAdd = () => {
-    add(product);
+    if (product.sizes && product.sizes.length > 0 && !selectedSize) {
+      toast.error("Por favor, selecione um tamanho", { description: product.name });
+      return;
+    }
+    add(product, selectedSize);
     toast.success("Adicionado ao carrinho", {
       description: product.name,
       action: { label: "Ver carrinho", onClick: open },
@@ -34,7 +39,10 @@ export function ProductCard({ product }: { product: Product }) {
       onHoverEnd={() => setHovered(false)}
       className="group relative flex flex-col overflow-hidden rounded-md bg-card shadow-card transition-shadow hover:shadow-elegant"
     >
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+      <div 
+        className="relative aspect-[4/5] overflow-hidden bg-muted cursor-pointer"
+        onClick={() => setHovered(!hovered)}
+      >
         <AnimatePresence mode="crossfade" initial={false}>
           <motion.img
             key={displayImage}
@@ -51,9 +59,9 @@ export function ProductCard({ product }: { product: Product }) {
 
         {/* Badge de troca frente/costas */}
         {product.backImage && (
-          <div className="absolute bottom-14 left-3 flex gap-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="absolute bottom-14 left-3 flex gap-1 opacity-100 lg:opacity-0 transition-opacity duration-300 lg:group-hover:opacity-100">
             <span className="rounded-sm bg-black/40 px-2 py-0.5 text-[9px] tracking-widest text-white/90 uppercase backdrop-blur-sm">
-              {hovered ? "costas" : "frente"}
+              {hovered ? "costas" : "frente"} (toque para trocar)
             </span>
           </div>
         )}
@@ -69,23 +77,23 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
           <button
             aria-label="Favoritar"
-            onClick={() => setFav((v) => !v)}
+            onClick={(e) => { e.stopPropagation(); setFav((v) => !v); }}
             className="grid h-9 w-9 place-items-center rounded-full glass text-wine-deep transition hover:bg-cream"
           >
             <Heart className={`h-4 w-4 ${fav ? "fill-wine text-wine" : ""}`} />
           </button>
         </div>
 
-        <div className="absolute inset-x-3 bottom-3 flex translate-y-6 gap-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <div className="absolute inset-x-3 bottom-3 flex gap-2 transition-all duration-500 lg:translate-y-6 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
           <button
-            onClick={handleAdd}
+            onClick={(e) => { e.stopPropagation(); handleAdd(); }}
             className="flex-1 rounded-sm bg-wine px-4 py-2.5 text-[11px] tracking-[0.25em] uppercase text-cream shadow-lg transition hover:bg-wine-deep"
           >
             Comprar
           </button>
           <button
             aria-label="Adicionar ao carrinho"
-            onClick={handleAdd}
+            onClick={(e) => { e.stopPropagation(); handleAdd(); }}
             className="grid h-10 w-10 place-items-center rounded-sm glass text-wine-deep transition hover:bg-cream"
           >
             <ShoppingBag className="h-4 w-4" />
@@ -102,12 +110,17 @@ export function ProductCard({ product }: { product: Product }) {
         {product.sizes && product.sizes.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-1">
             {product.sizes.map((s) => (
-              <span
+              <button
                 key={s}
-                className="rounded border border-wine/30 px-1.5 py-0.5 text-[10px] tracking-wide text-wine-deep uppercase"
+                onClick={() => setSelectedSize(s)}
+                className={`rounded border px-2 py-1 text-[10px] tracking-wide uppercase transition-colors ${
+                  selectedSize === s 
+                    ? "border-wine bg-wine text-cream" 
+                    : "border-wine/30 text-wine-deep hover:border-wine"
+                }`}
               >
                 {s}
-              </span>
+              </button>
             ))}
           </div>
         )}

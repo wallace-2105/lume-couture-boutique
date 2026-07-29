@@ -9,9 +9,9 @@ interface CartContextValue {
   open: () => void;
   close: () => void;
   toggle: () => void;
-  add: (product: Product) => void;
-  remove: (id: string) => void;
-  setQuantity: (id: string, qty: number) => void;
+  add: (product: Product, size?: string) => void;
+  remove: (cartItemId: string) => void;
+  setQuantity: (cartItemId: string, qty: number) => void;
   clear: () => void;
 }
 
@@ -49,18 +49,27 @@ export function CartProvider({ children }: { children: ReactNode }) {
       open: () => setIsOpen(true),
       close: () => setIsOpen(false),
       toggle: () => setIsOpen((v) => !v),
-      add: (product) =>
+      add: (product, size) =>
         setItems((prev) => {
-          const found = prev.find((i) => i.id === product.id);
-          if (found) return prev.map((i) => (i.id === product.id ? { ...i, quantity: i.quantity + 1 } : i));
-          return [...prev, { ...product, quantity: 1 }];
+          const cartItemId = size ? `${product.id}-${size}` : product.id;
+          const found = prev.find((i) => (i.selectedSize ? `${i.id}-${i.selectedSize}` : i.id) === cartItemId);
+          if (found) {
+            return prev.map((i) => {
+              const currentId = i.selectedSize ? `${i.id}-${i.selectedSize}` : i.id;
+              return currentId === cartItemId ? { ...i, quantity: i.quantity + 1 } : i;
+            });
+          }
+          return [...prev, { ...product, quantity: 1, selectedSize: size }];
         }),
-      remove: (id) => setItems((prev) => prev.filter((i) => i.id !== id)),
-      setQuantity: (id, qty) =>
+      remove: (cartItemId) => setItems((prev) => prev.filter((i) => (i.selectedSize ? `${i.id}-${i.selectedSize}` : i.id) !== cartItemId)),
+      setQuantity: (cartItemId, qty) =>
         setItems((prev) =>
           qty <= 0
-            ? prev.filter((i) => i.id !== id)
-            : prev.map((i) => (i.id === id ? { ...i, quantity: qty } : i)),
+            ? prev.filter((i) => (i.selectedSize ? `${i.id}-${i.selectedSize}` : i.id) !== cartItemId)
+            : prev.map((i) => {
+                const currentId = i.selectedSize ? `${i.id}-${i.selectedSize}` : i.id;
+                return currentId === cartItemId ? { ...i, quantity: qty } : i;
+              }),
         ),
       clear: () => setItems([]),
     };
