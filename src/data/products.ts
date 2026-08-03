@@ -91,15 +91,15 @@ const TAMANHO_UNICO = ["Único"];
 
 // ─── Categorias ───────────────────────────────────────────────────────────
 export const categories: Category[] = [
-  { slug: "vestidos",   name: "Vestidos",      tagline: "Silhuetas atemporais",          image: img("1595777457583-95e059d581b8") },
-  { slug: "blusas",     name: "Blusas",        tagline: "Delicadeza no essencial",        image: blusaFemininaCapа },
-  { slug: "calcas",     name: "Calças",        tagline: "Alfaiataria contemporânea",      image: img("1594633312681-425c7b97ccd1") },
-  { slug: "jeans",      name: "Jeans",         tagline: "O denim reinventado",            image: img("1541099649105-f69ad21f3246") },
-  { slug: "shorts",     name: "Shorts",        tagline: "Leveza e movimento",             image: img("1591195853828-11db59a44f6b") },
+  { slug: "vestidos",   name: "Vestidos",      tagline: "Silhuetas atemporais",          image: vestidoIris },
+  { slug: "blusas",     name: "Blusas",        tagline: "Delicadeza no essencial",        image: blusaFredo },
+  { slug: "calcas",     name: "Calças",        tagline: "Alfaiataria contemporânea",      image: calcaPoaBranca },
+  { slug: "jeans",      name: "Jeans",         tagline: "O denim reinventado",            image: calcaJeansBallonClara },
+  { slug: "shorts",     name: "Shorts",        tagline: "Leveza e movimento",             image: shorts },
   { slug: "saias",      name: "Saias",         tagline: "Fluidez feminina",               image: saiaCapa },
   { slug: "conjuntos",  name: "Conjuntos",     tagline: "Look completo",                  image: img("1490481651871-ab68de25d43d") },
   { slug: "macacoes",   name: "Macacões",      tagline: "Praticidade elegante",           image: img("1618932260643-eee4a2f652a6") },
-  { slug: "casacos",    name: "Casacos",       tagline: "Camadas sofisticadas",           image: casacoCapa },
+  { slug: "casacos",    name: "Casacos",       tagline: "Camadas sofisticadas",           image: jaquetaSuedeVinho },
   { slug: "fitness",    name: "Moda Fitness",  tagline: "Performance com estilo",         image: img("1518310383802-640c2de311b2") },
   { slug: "praia",      name: "Moda Praia",    tagline: "Sol, mar e LUME",                image: modaPraiaBanner },
   { slug: "acessorios", name: "Acessórios",    tagline: "O detalhe faz o luxo",           image: img("1611085583191-a3b181a88401") },
