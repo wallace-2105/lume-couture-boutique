@@ -30,6 +30,8 @@ export interface Product {
   backImage?: string;
   /** Tamanhos disponíveis. Ex: ["P","M","G"] ou ["34","36","38","40","42"] */
   sizes?: string[];
+  /** Cores disponíveis */
+  colors?: string[];
   featured?: boolean;
   isNew?: boolean;
   collection?: boolean;

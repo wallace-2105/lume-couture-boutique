@@ -110,6 +110,18 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="text-xs text-muted-foreground">
           ou {inst.times}x de {formatPrice(inst.value)} sem juros
         </p>
+        {product.colors && product.colors.length > 0 && (
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            {product.colors.map((c) => (
+              <span
+                key={c}
+                className="rounded-sm border border-wine/20 bg-cream/60 px-1.5 py-0.5 text-[9px] tracking-wide text-wine-deep"
+              >
+                {c}
+              </span>
+            ))}
+          </div>
+        )}
         {product.sizes && product.sizes.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-1">
             {product.sizes.map((s) => (

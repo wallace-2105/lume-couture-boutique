@@ -52,10 +52,41 @@ import saiaCapa from "@/assets/saia capa.webp";
 import blusaFemininaCapа from "@/assets/blusa feminina.webp";
 import casacoCapa from "@/assets/casacocapa.jpg";
 
+// ─── Novos imports ────────────────────────────────────────────────────────
+import blusaAssimetrica from "@/assets/Blusa assimétrica.jpeg";
+import blusaAssimetrica1 from "@/assets/Blusa assimétrica 1.jpeg";
+import blusaAssimetrica2 from "@/assets/Blusa assimétrica2.jpeg";
+import blusaNo from "@/assets/Blusa nó - PM G e GG.jpeg";
+import blusaNo2 from "@/assets/Blusa nó - 2.jpeg";
+
+import bodyDrapeado from "@/assets/Body Drapeado - P M G GG.jpeg";
+import bodyDrapeado2 from "@/assets/Body Drapeado - 2.jpeg";
+import calcaJeansWidOff from "@/assets/Calça jeans Wid off.jpeg";
+import calcaJeansWidLeg from "@/assets/Calça jeans wid leg - 34 ao 46.jpeg";
+import calcaJeansWidLeg2 from "@/assets/Calça jeans wid leg - 2.jpeg";
+import calcaJeansWidLegClara from "@/assets/Calça jeans wid leg CLARA - 34 ao 46.jpeg";
+import calcaJeansWidLegClara2 from "@/assets/Calça jeans wid leg  CLARA - 34 ao 46.jpeg";
+import calcaJeansBallonClara from "@/assets/Calça jeans Ballon Clara - 34 ao 46.jpeg";
+import calcaJeansBallonClara2 from "@/assets/Calça jeans Ballon Clara - 2.jpeg";
+import vestidoLeticia from "@/assets/Vestido Letícia - PP p m g.jpeg";
+import vestidoLeticia2 from "@/assets/Vestido Letícia - 2.jpeg";
+import teeBarco from "@/assets/Tee Barco - P M G.jpeg";
+import moletomListra from "@/assets/Moletom listra - P M G.jpeg";
+import moletomListra2 from "@/assets/Moletom listra - 2.jpeg";
+
+import calcaPoaBranca from "@/assets/Calça poá branca - P M G.jpeg";
+import calcaPoaBranca2 from "@/assets/Calça poá branca -2.jpeg";
+import basicaRibanaRosa from "@/assets/Básica ribana Rosa - P M G.jpeg";
+import tulePoaPreto from "@/assets/Tule Poá Preto - P M G.jpeg";
+import tulePoaBranco from "@/assets/Tule Poá Branco - P M G.jpeg";
+import tulePoaBranco2 from "@/assets/Tule Poá Branco - 2.jpeg";
+
 // ─── Tamanhos padrão ──────────────────────────────────────────────────────
 const SIZES_PMG = ["P", "M", "G"];
+const SIZES_PMGG = ["P", "M", "G", "GG"];
 const SIZES_PPMG = ["PP", "P", "M", "G"];
 const SIZES_JEANS = ["34", "36", "38", "40", "42"];
+const SIZES_JEANS_46 = ["34", "36", "38", "40", "42", "44", "46"];
 const TAMANHO_UNICO = ["Único"];
 
 // ─── Categorias ───────────────────────────────────────────────────────────
@@ -202,6 +233,86 @@ export const products: Product[] = [
     image: blusaModeladora,
     sizes: TAMANHO_UNICO,
   },
+  {
+    id: "blusa-assimetrica",
+    name: "Blusa Assimétrica",
+    price: 50.00,
+    category: "blusas",
+    image: blusaAssimetrica,
+    backImage: blusaAssimetrica1,
+    sizes: TAMANHO_UNICO,
+    colors: ["Marrom", "Branca", "Vinho", "Preto", "Azul"],
+    isNew: true,
+  },
+  {
+    id: "blusa-manga-longa-assimetrica",
+    name: "Blusa Manga Longa Assimétrica",
+    price: 59.99,
+    category: "blusas",
+    image: blusaAssimetrica2,
+    sizes: TAMANHO_UNICO,
+    colors: ["Azul", "Borgonha", "Marrom", "Preto", "Rosa", "Terra Cota", "Verde", "Off"],
+    isNew: true,
+  },
+  {
+    id: "blusa-no",
+    name: "Blusa Nó",
+    price: 47.90,
+    category: "blusas",
+    image: blusaNo,
+    backImage: blusaNo2,
+    sizes: SIZES_PMGG,
+    colors: ["Marrom", "Branco", "Rosa", "Vermelho", "Vinho"],
+    isNew: true,
+  },
+  {
+    id: "body-drapeado",
+    name: "Body Drapeado",
+    price: 59.90,
+    category: "blusas",
+    image: bodyDrapeado,
+    backImage: bodyDrapeado2,
+    sizes: SIZES_PMGG,
+    colors: ["Branco", "Marrom", "Preto", "Rosa", "Azul", "Cinza"],
+    isNew: true,
+  },
+  {
+    id: "tee-barco",
+    name: "Tee Barco",
+    price: 59.90,
+    category: "blusas",
+    image: teeBarco,
+    sizes: SIZES_PMG,
+    isNew: true,
+  },
+  {
+    id: "basica-ribana-rosa",
+    name: "Básica Ribana Rosa",
+    price: 49.99,
+    category: "blusas",
+    image: basicaRibanaRosa,
+    sizes: SIZES_PMG,
+    isNew: true,
+  },
+  {
+    id: "tule-poa-preto",
+    name: "Tule Poá Preto",
+    price: 59.90,
+    category: "blusas",
+    image: tulePoaPreto,
+    sizes: SIZES_PMG,
+    isNew: true,
+  },
+  {
+    id: "tule-poa-branco",
+    name: "Tule Poá Branco",
+    price: 59.90,
+    category: "blusas",
+    image: tulePoaBranco,
+    backImage: tulePoaBranco2,
+    sizes: SIZES_PMG,
+    isNew: true,
+  },
 
   // ── CALÇAS JEANS ─────────────────────────────────────────────────────────
   {
@@ -230,6 +341,54 @@ export const products: Product[] = [
     image: jensClaro3,
     backImage: jensClaro2,
     sizes: SIZES_JEANS,
+  },
+  {
+    id: "calca-jeans-wid-off",
+    name: "Calça Jeans Wid Off",
+    price: 95.00,
+    category: "jeans",
+    image: calcaJeansWidOff,
+    sizes: SIZES_JEANS_46,
+    isNew: true,
+  },
+  {
+    id: "calca-jeans-wid-leg",
+    name: "Calça Jeans Wid Leg",
+    price: 85.00,
+    category: "jeans",
+    image: calcaJeansWidLeg,
+    backImage: calcaJeansWidLeg2,
+    sizes: SIZES_JEANS_46,
+    isNew: true,
+  },
+  {
+    id: "calca-jeans-wid-leg-clara",
+    name: "Calça Jeans Wid Leg Clara",
+    price: 85.00,
+    category: "jeans",
+    image: calcaJeansWidLegClara,
+    backImage: calcaJeansWidLegClara2,
+    sizes: SIZES_JEANS_46,
+    isNew: true,
+  },
+  {
+    id: "calca-jeans-baloon",
+    name: "Calça Jeans Baloon",
+    price: 110.00,
+    category: "jeans",
+    image: calcaJeansWidLeg,
+    sizes: SIZES_JEANS_46,
+    isNew: true,
+  },
+  {
+    id: "calca-jeans-ballon-clara",
+    name: "Calça Jeans Ballon Clara",
+    price: 110.00,
+    category: "jeans",
+    image: calcaJeansBallonClara,
+    backImage: calcaJeansBallonClara2,
+    sizes: SIZES_JEANS_46,
+    isNew: true,
   },
 
   // ── SHORTS ───────────────────────────────────────────────────────────────
@@ -318,6 +477,17 @@ export const products: Product[] = [
     image: vestidoOrange,
     sizes: TAMANHO_UNICO,
   },
+  {
+    id: "vestido-leticia",
+    name: "Vestido Letícia",
+    price: 75.00,
+    category: "vestidos",
+    image: vestidoLeticia,
+    backImage: vestidoLeticia2,
+    sizes: SIZES_PPMG,
+    colors: ["Marrom", "Preto", "Azul", "Cinza", "Vermelho", "Verde"],
+    isNew: true,
+  },
 
   // ── MODA PRAIA ────────────────────────────────────────────────────────────
   {
@@ -327,6 +497,30 @@ export const products: Product[] = [
     category: "praia",
     image: saidaDePraia,
     sizes: TAMANHO_UNICO,
+    isNew: true,
+  },
+
+  // ── CALÇAS ─────────────────────────────────────────────────────────────────
+  {
+    id: "calca-poa-branca",
+    name: "Calça Poá Branca",
+    price: 114.99,
+    category: "calcas",
+    image: calcaPoaBranca,
+    backImage: calcaPoaBranca2,
+    sizes: SIZES_PMG,
+    isNew: true,
+  },
+
+  // ── CASACOS / JAQUETAS (novos) ─────────────────────────────────────────────
+  {
+    id: "moletom-listra",
+    name: "Moletom Listra",
+    price: 105.90,
+    category: "casacos",
+    image: moletomListra,
+    backImage: moletomListra2,
+    sizes: SIZES_PMG,
     isNew: true,
   },
 
